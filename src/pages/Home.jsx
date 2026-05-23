@@ -1,241 +1,459 @@
 import { Link } from "react-router-dom"
-
-import {
-  useLanguage
-} from "../context/LanguageContext"
+import { motion } from "framer-motion"
+import { useLanguage } from "../context/LanguageContext"
 
 function Home() {
-
   const { language } = useLanguage()
 
   return (
-
-    <section className="relative overflow-hidden bg-[#f8f3ef] min-h-screen px-6 md:px-20 py-14 md:py-24">
-
+    <section
+      className="
+        relative
+        min-h-screen
+        overflow-hidden
+        bg-[#f8f4f1]
+        px-6
+        md:px-16
+        lg:px-24
+        pt-28
+        lg:pt-36
+        pb-20
+      "
+    >
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f8f3ef] via-[#f8f3ef] to-[#f3ebe6]"></div>
+      <div
+        className="
+          absolute inset-0
+          bg-gradient-to-br
+          from-[#fffaf7]
+          via-[#f8f4f1]
+          to-[#efe4df]
+        "
+      />
 
-      {/* BIG TEXT */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 opacity-[0.03] pointer-events-none select-none">
+      {/* SOFT GLOW */}
+      <div
+        className="
+          absolute
+          top-[-220px]
+          left-[-160px]
+          w-[580px]
+          h-[580px]
+          rounded-full
+          bg-[#dfc3b7]
+          blur-[160px]
+          opacity-30
+        "
+      />
 
-        <h1 className="text-[90px] md:text-[260px] font-serif text-[#9f6f62] whitespace-nowrap tracking-[8px]">
+      <div
+        className="
+          absolute
+          bottom-[-260px]
+          right-[-180px]
+          w-[600px]
+          h-[600px]
+          rounded-full
+          bg-[#c9a99c]
+          blur-[170px]
+          opacity-20
+        "
+      />
 
+      {/* SOFT WATERMARK */}
+      <div
+        className="
+          hidden lg:block
+          absolute
+          bottom-[30px]
+          left-[70px]
+          pointer-events-none
+          select-none
+          z-0
+        "
+      >
+        <h1
+          className="
+            text-[110px]
+            font-serif
+            leading-none
+            tracking-[-5px]
+            text-[rgba(204,176,165,0.10)]
+            whitespace-nowrap
+          "
+        >
           NOURAFA
-
         </h1>
-
       </div>
 
-      {/* GLOW */}
-      <div className="absolute top-32 left-10 w-[220px] h-[220px] bg-[#d6b2a3] opacity-20 blur-[100px] rounded-full animate-pulse"></div>
-
-      <div className="absolute bottom-10 right-10 w-[260px] h-[260px] bg-[#c08d7b] opacity-20 blur-[120px] rounded-full animate-pulse"></div>
-
-      {/* CONTENT */}
-      <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
-
+      {/* MAIN */}
+      <div
+        className="
+          relative
+          z-10
+          max-w-7xl
+          mx-auto
+          grid
+          lg:grid-cols-2
+          gap-14
+          items-center
+        "
+      >
         {/* LEFT */}
-        <div className="text-center md:text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 55 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-center lg:text-left"
+        >
+          {/* BADGE */}
+          <div
+            className="
+              inline-flex
+              items-center
+              gap-3
+              px-5
+              py-2
+              rounded-full
+              bg-white/70
+              backdrop-blur-xl
+              border
+              border-white/80
+              shadow-[0_12px_35px_rgba(80,45,35,0.04)]
+            "
+          >
+            <span className="w-2 h-2 rounded-full bg-[#b28778]" />
 
-          {/* MINI */}
-          <p className="uppercase tracking-[6px] text-[#b0897b] text-sm">
+            <p
+              className="
+                uppercase
+                tracking-[3px]
+                text-[#b28778]
+                text-[10px]
+                font-medium
+              "
+            >
+              {language === "EN"
+                ? "Premium Hijab Collection"
+                : "Koleksi Hijab Premium"}
+            </p>
+          </div>
 
-            {
-              language === "EN"
-                ? "Elegant Muslim Fashion"
-                : "Fashion Muslim Elegan"
-            }
-
+          {/* LABEL */}
+          <p
+            className="
+              mt-8
+              uppercase
+              tracking-[8px]
+              text-[#c3a496]
+              text-xs
+              font-medium
+            "
+          >
+            {language === "EN"
+              ? "Elegant Muslim Fashion"
+              : "Fashion Muslim Elegan"}
           </p>
 
           {/* TITLE */}
-          <h1 className="mt-6 text-5xl md:text-7xl font-serif text-[#9f6f62] leading-tight">
-
-            {
-              language === "EN"
-                ? (
-                  <>
-                    Beauty in
-                    <br />
-                    Simplicity
-                  </>
-                )
-                : (
-                  <>
-                    Keindahan Dalam
-                    <br />
-                    Kesederhanaan
-                  </>
-                )
-            }
-
+          <h1
+            className="
+              mt-7
+              text-[54px]
+              sm:text-[72px]
+              lg:text-[92px]
+              leading-[0.88]
+              tracking-[-4px]
+              font-serif
+              text-[#ab7f71]
+            "
+          >
+            {language === "EN" ? (
+              <>
+                Beauty
+                <br />
+                in Simplicity
+              </>
+            ) : (
+              <>
+                Keindahan
+                <br />
+                Dalam Kesederhanaan
+              </>
+            )}
           </h1>
 
-          {/* DESC */}
-          <p className="mt-8 text-[#7c6257] text-lg leading-9 max-w-xl mx-auto md:mx-0">
-
-            {
-              language === "EN"
-                ? (
-                  <>
-                    Thoughtfully crafted with comfort, softness, and timeless elegance,
-                    NOURAFA is designed to accompany every woman with confidence,
-                    grace, and effortless beauty in every step of her journey.
-                  </>
-                )
-                : (
-                  <>
-                    Dirancang dengan kenyamanan, kelembutan, dan elegansi abadi,
-                    NOURAFA hadir untuk menemani setiap wanita dengan rasa percaya diri,
-                    anggun, dan cantik di setiap langkah perjalanannya.
-                  </>
-                )
-            }
-
+          {/* DESCRIPTION */}
+          <p
+            className="
+              mt-10
+              text-[#8f7569]
+              text-[17px]
+              leading-9
+              max-w-xl
+              mx-auto
+              lg:mx-0
+            "
+          >
+            {language === "EN" ? (
+              <>
+                Crafted with softness, elegance, and timeless comfort,
+                NOURAFA accompanies every woman with graceful confidence
+                and timeless modest beauty.
+              </>
+            ) : (
+              <>
+                Dirancang dengan kelembutan, elegansi, dan kenyamanan
+                abadi, NOURAFA hadir menemani setiap wanita dengan
+                kepercayaan diri dan kecantikan yang timeless.
+              </>
+            )}
           </p>
 
           {/* BUTTON */}
-          <div className="mt-10 flex justify-center md:justify-start">
-
+          <div
+            className="
+              mt-14
+              flex
+              justify-center
+              lg:justify-start
+            "
+          >
             <Link to="/collection">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="
+                  relative
+                  overflow-hidden
+                  group
+                  px-10
+                  py-5
+                  rounded-full
+                  bg-[#b28778]
+                  text-white
+                  tracking-wide
+                  shadow-[0_18px_40px_rgba(178,135,120,0.35)]
+                  transition-all
+                  duration-500
+                "
+              >
+                {/* SHINE */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    -translate-x-[120%]
+                    group-hover:translate-x-[120%]
+                    transition
+                    duration-1000
+                    bg-gradient-to-r
+                    from-transparent
+                    via-white/30
+                    to-transparent
+                  "
+                />
 
-              <button className="px-8 py-4 bg-[#a97868] hover:bg-[#946657] transition duration-300 text-white rounded-full shadow-xl hover:scale-105">
-
-                {
-                  language === "EN"
+                <span className="relative z-10">
+                  {language === "EN"
                     ? "Explore Collection"
-                    : "Lihat Koleksi"
-                }
-
-              </button>
-
+                    : "Lihat Koleksi"}
+                </span>
+              </motion.button>
             </Link>
-
           </div>
+        </motion.div>
 
-        </div>
-
-        {/* RIGHT VIDEO */}
-        <div className="relative flex justify-center items-center">
-
-          {/* MAIN GLOW */}
-          <div className="absolute w-[320px] md:w-[520px] h-[320px] md:h-[520px] bg-[#d6b2a3] blur-[120px] opacity-30 rounded-full animate-pulse"></div>
-
-          {/* RING */}
-          <div className="absolute w-[280px] md:w-[450px] h-[280px] md:h-[450px] border border-white/30 rounded-full animate-[spin_20s_linear_infinite]"></div>
+        {/* RIGHT */}
+        <motion.div
+          initial={{ opacity: 0, x: 55 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.1 }}
+          className="
+            relative
+            flex
+            justify-center
+            lg:justify-end
+          "
+        >
+          {/* FRAME */}
+          <div
+            className="
+              absolute
+              -inset-4
+              rounded-[70px]
+              border
+              border-white/60
+              bg-white/20
+              backdrop-blur-sm
+              shadow-[0_30px_80px_rgba(90,55,45,0.08)]
+            "
+          />
 
           {/* VIDEO */}
-          <div className="relative z-10 overflow-hidden rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)] border border-white/40">
-
+          <motion.div
+            animate={{
+              y: [0, -10, 0]
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="relative z-10"
+          >
             <video
               autoPlay
               muted
               loop
               playsInline
               className="
-                w-[320px]
-                md:w-[470px]
-                h-[500px]
-                md:h-[700px]
+                w-[330px]
+                sm:w-[420px]
+                lg:w-[470px]
+                h-[455px]
+                sm:h-[590px]
+                lg:h-[660px]
                 object-cover
+                rounded-[58px]
+                hover:scale-[1.03]
+                transition-transform
+                duration-[5000ms]
+                shadow-[0_35px_90px_rgba(90,55,45,0.16)]
               "
             >
-
-              <source src="/nourafa.mp4" type="video/mp4" />
-
+              <source src="/ee.mp4" type="video/mp4" />
             </video>
 
-            {/* DARK OVERLAY */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/10"></div>
-
-            {/* CINEMATIC LIGHT */}
+            {/* OVERLAY */}
             <div
               className="
                 absolute
-                top-[-200px]
-                left-[-250px]
-                w-[260px]
-                h-[1200px]
-                rotate-[25deg]
-                animate-light
+                inset-0
+                rounded-[58px]
+                bg-gradient-to-t
+                from-black/20
+                via-transparent
+                to-white/10
                 pointer-events-none
-                z-20
+              "
+            />
+          </motion.div>
+
+          {/* TOP CARD */}
+          <motion.div
+            animate={{
+              y: [0, -8, 0]
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="
+              absolute
+              z-30
+              top-7
+              right-0
+              md:right-[-12px]
+              bg-white/80
+              backdrop-blur-2xl
+              border
+              border-white/70
+              px-6
+              py-5
+              rounded-[30px]
+              shadow-[0_18px_40px_rgba(80,45,35,0.08)]
+            "
+          >
+            <p
+              className="
+                text-[#c4a293]
+                text-[10px]
+                tracking-[6px]
+                uppercase
+                whitespace-nowrap
               "
             >
-
-              <div
-                className="
-                  w-full
-                  h-full
-                  bg-gradient-to-b
-                  from-white/0
-                  via-white/40
-                  to-white/0
-                  blur-2xl
-                  mix-blend-screen
-                "
-              ></div>
-
-            </div>
-
-          </div>
-
-          {/* FLOAT CARD */}
-          <div className="absolute top-8 right-0 md:right-4 bg-white/80 backdrop-blur-md px-5 py-3 rounded-[22px] shadow-xl z-20">
-
-            <p className="text-[#b0897b] text-xs tracking-[4px] uppercase">
-
-              {
-                language === "EN"
-                  ? "New Arrival"
-                  : "Produk Baru"
-              }
-
+              {language === "EN"
+                ? "New Arrival"
+                : "Produk Baru"}
             </p>
 
-            <h3 className="mt-1 text-[#9f6f62] font-serif text-lg">
-
-              {
-                language === "EN"
-                  ? "Timeless Elegance"
-                  : "Elegansi Abadi"
-              }
-
+            <h3
+              className="
+                mt-3
+                text-[#a87b6e]
+                text-[24px]
+                font-serif
+                leading-none
+                whitespace-nowrap
+              "
+            >
+              {language === "EN"
+                ? "Timeless Elegance"
+                : "Elegansi Abadi"}
             </h3>
+          </motion.div>
 
-          </div>
-
-          {/* MINI CARD */}
-          <div className="absolute bottom-5 left-0 md:left-4 bg-white/85 backdrop-blur-md px-5 py-4 rounded-[24px] shadow-xl z-20">
-
-            <p className="text-[#b0897b] text-xs tracking-[4px] uppercase">
-
-              {
-                language === "EN"
-                  ? "Crafted With Love"
-                  : "Dibuat Dengan Cinta"
-              }
-
+          {/* BOTTOM CARD */}
+          <motion.div
+            animate={{
+              y: [0, 10, 0]
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="
+              absolute
+              z-30
+              bottom-7
+              left-0
+              md:left-[-12px]
+              bg-white/80
+              backdrop-blur-2xl
+              border
+              border-white/70
+              px-6
+              py-5
+              rounded-[30px]
+              shadow-[0_18px_40px_rgba(80,45,35,0.08)]
+            "
+          >
+            <p
+              className="
+                text-[#c4a293]
+                text-[10px]
+                tracking-[6px]
+                uppercase
+                whitespace-nowrap
+              "
+            >
+              {language === "EN"
+                ? "Crafted With Love"
+                : "Dibuat Dengan Cinta"}
             </p>
 
-            <h3 className="mt-1 text-[#9f6f62] text-lg font-serif">
-
-              {
-                language === "EN"
-                  ? "Premium Comfort"
-                  : "Kenyamanan Premium"
-              }
-
+            <h3
+              className="
+                mt-3
+                text-[#a87b6e]
+                text-[24px]
+                font-serif
+                leading-none
+                whitespace-nowrap
+              "
+            >
+              {language === "EN"
+                ? "Premium Comfort"
+                : "Kenyamanan Premium"}
             </h3>
-
-          </div>
-
-        </div>
-
+          </motion.div>
+        </motion.div>
       </div>
-
     </section>
-
   )
 }
 

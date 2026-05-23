@@ -128,7 +128,7 @@ function Contact() {
 
               {/* INSTAGRAM */}
               <a
-                href="https://instagram.com/"
+                href="https://www.instagram.com/nourafa.official?igsh=MW43ems0bHZvcmdzZQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between bg-[#f8f3ef] hover:bg-[#ead8cf] transition duration-300 rounded-full px-6 py-5 group"
@@ -160,7 +160,7 @@ function Contact() {
 
               {/* TIKTOK */}
               <a
-                href="https://tiktok.com/"
+                href="https://www.tiktok.com/@nourafa.official?_r=1&_t=ZS-96ZTdMkqh6X/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between bg-[#f8f3ef] hover:bg-[#ead8cf] transition duration-300 rounded-full px-6 py-5 group"
@@ -176,7 +176,7 @@ function Contact() {
 
                   <p className="text-[#7c6257] text-sm mt-1">
 
-                    @nourafa.id
+                    @nourafa.official
 
                   </p>
 
