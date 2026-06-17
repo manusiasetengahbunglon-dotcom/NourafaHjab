@@ -23,250 +23,243 @@ function Collection() {
   const tiktokLink = "https://www.tiktok.com/"
 
   const products = [
-    {
-      id: 1,
-      series: "Ruwa Viscose",
-      name: "Ruwa Viscose - Milk Tea",
-      color: "Milk Tea",
-      material: "Viscose",
-      size: "175 cm",
-      price: "Rp59.000",
-      badge: "Best Seller",
-      image: "/viscose.jpeg",
-      hoverImage: "/kain.jpeg",
-      images: ["/viscose.jpeg", "/kain.jpeg", "/viscose.jpeg"],
-      description: isEN
-        ? "Soft viscose pashmina with a natural fall for a neat everyday look."
-        : "Pashmina viscose lembut dengan karakter jatuh alami untuk tampilan harian yang rapi.",
-    },
-    {
-      id: 2,
-      series: "Ruwa Viscose",
-      name: "Ruwa Viscose - Soft Brown",
-      color: "Soft Brown",
-      material: "Viscose",
-      size: "175 cm",
-      price: "Rp59.000",
-      badge: "New",
-      image: "/viscose.jpeg",
-      hoverImage: "/kain.jpeg",
-      images: ["/bg1.jpeg", "/kain.jpeg", "/viscose.jpeg"],
-      description: isEN
-        ? "A warm neutral shade that is easy to pair with daily outfits."
-        : "Warna netral hangat yang mudah dipadukan dengan outfit harian.",
-    },
-    {
-      id: 3,
-      series: "Ruwa Viscose",
-      name: "Ruwa Viscose - Cocoa",
-      color: "Cocoa",
-      material: "Viscose",
-      size: "175 cm",
-      price: "Rp59.000",
-      badge: "",
-      image: "/viscose.jpeg",
-      hoverImage: "/viscose.jpeg",
-      images: ["/viscose.jpeg", "/viscose.jpeg", "/viscose.jpeg"],
-      description: isEN
-        ? "A calm brown tone made for simple and graceful styling."
-        : "Warna cokelat lembut untuk tampilan sederhana dan anggun.",
-    },
-    {
-      id: 4,
-      series: "Mahra Voal",
-      name: "Mahra Voal - Sand Beige",
-      color: "Sand Beige",
-      material: "Voal",
-      size: "175 cm",
-      price: "Rp79.000",
-      badge: "New",
-      image: "/voal.jpeg",
-      hoverImage: "/voal.jpeg",
-      images: ["/voal.jpeg", "/voal.jpeg", "/voal.jpeg"],
-      description: isEN
-        ? "Lightweight voal with a clean finish and easy styling."
-        : "Voal ringan dengan tampilan bersih dan mudah dibentuk.",
-    },
-    {
-      id: 5,
-      series: "Mahra Voal",
-      name: "Mahra Voal - Ivory",
-      color: "Ivory",
-      material: "Voal",
-      size: "175 cm",
-      price: "Rp79.000",
-      badge: "",
-      image: "/voal.jpeg",
-      hoverImage: "/voal.jpeg",
-      images: ["/voal.jpeg", "/voal.jpeg", "/voal.jpeg"],
-      description: isEN
-        ? "A soft light shade for a clean and graceful look."
-        : "Warna terang yang lembut untuk tampilan bersih dan anggun.",
-    },
-    {
-      id: 6,
-      series: "Mahra Voal",
-      name: "Mahra Voal - Taupe",
-      color: "Taupe",
-      material: "Voal",
-      size: "175 cm",
-      price: "Rp79.000",
-      badge: "Limited",
-      image: "/voal.jpeg",
-      hoverImage: "/voal.jpeg",
-      images: ["/voal.jpeg", "/voal.jpeg", "/voal.jpeg"],
-      description: isEN
-        ? "A timeless neutral shade with a soft elegant impression."
-        : "Warna netral timeless dengan kesan lembut dan elegan.",
-    },
-    {
-      id: 7,
-      series: "Nazira Segi Empat",
-      name: "Nazira Segi Empat - Cream",
-      color: "Cream",
-      material: "Paris Japan",
-      size: "115 × 115 cm",
-      price: "Rp69.000",
-      badge: "Best Seller",
-      image: "/segi.jpeg",
-      hoverImage: "/segi.jpeg",
-      images: ["/segi.jpeg", "/segi.jpeg", "/segi.jpeg"],
-      description: isEN
-        ? "A square scarf with a light texture for a neat everyday style."
-        : "Hijab segi empat bertekstur ringan untuk tampilan harian yang rapi.",
-    },
-    {
-      id: 8,
-      series: "Nazira Segi Empat",
-      name: "Nazira Segi Empat - Dusty Pink",
-      color: "Dusty Pink",
-      material: "Paris Japan",
-      size: "115 × 115 cm",
-      price: "Rp69.000",
-      badge: "",
-      image: "/segi.jpeg",
-      hoverImage: "/segi.jpeg",
-      images: ["/segi.jpeg", "/segi.jpeg", "/segi.jpeg"],
-      description: isEN
-        ? "A soft feminine color with a simple and clean finish."
-        : "Warna feminin yang lembut dengan tampilan sederhana dan bersih.",
-    },
-    {
-      id: 9,
-      series: "Nazira Segi Empat",
-      name: "Nazira Segi Empat - Sage",
-      color: "Sage",
-      material: "Paris Japan",
-      size: "115 × 115 cm",
-      price: "Rp69.000",
-      badge: "New",
-      image: "/segi.jpeg",
-      hoverImage: "/segi.jpeg",
-      images: ["/segi.jpeg", "/segi.jpeg", "/segi.jpeg"],
-      description: isEN
-        ? "A calm green shade made for soft everyday looks."
-        : "Warna hijau lembut untuk tampilan harian yang tenang.",
-    },
-    {
-      id: 10,
-      series: "Wareefa Ceruty",
-      name: "Wareefa Ceruty - Mocca",
-      color: "Mocca",
-      material: "Ceruty",
-      size: "175 cm",
-      price: "Rp89.000",
-      badge: "Best Seller",
-      image: "/Ceruty.jpeg",
-      hoverImage: "/Ceruty.jpeg",
-      images: ["/Ceruty.jpeg", "/Ceruty.jpeg", "/Ceruty.jpeg"],
-      description: isEN
-        ? "A flowy ceruty pashmina with a soft feminine look."
-        : "Pashmina ceruty yang flowy dengan kesan feminin dan lembut.",
-    },
-    {
-      id: 11,
-      series: "Wareefa Ceruty",
-      name: "Wareefa Ceruty - Nude",
-      color: "Nude",
-      material: "Ceruty",
-      size: "175 cm",
-      price: "Rp89.000",
-      badge: "",
-      image: "/Ceruty.jpeg",
-      hoverImage: "/Ceruty.jpeg",
-      images: ["/Ceruty.jpeg", "/Ceruty.jpeg", "/Ceruty.jpeg"],
-      description: isEN
-        ? "A soft nude shade for an effortless graceful style."
-        : "Warna nude lembut untuk gaya anggun yang effortless.",
-    },
-    {
-      id: 12,
-      series: "Wareefa Ceruty",
-      name: "Wareefa Ceruty - Ash Grey",
-      color: "Ash Grey",
-      material: "Ceruty",
-      size: "175 cm",
-      price: "Rp89.000",
-      badge: "Limited",
-      image: "/Ceruty.jpeg",
-      hoverImage: "/Ceruty.jpeg",
-      images: ["/Ceruty.jpeg", "/Ceruty.jpeg", "/Ceruty.jpeg"],
-      description: isEN
-        ? "A soft grey tone that brings a modern modest look."
-        : "Warna abu lembut untuk tampilan modest yang modern.",
-    },
-    {
-      id: 13,
-      series: "Dania Bergo",
-      name: "Dania Bergo - Daily Nude",
-      color: "Daily Nude",
-      material: "Bergo",
-      size: "Coming Soon",
-      price: "Coming Soon",
-      badge: "Coming Soon",
-      image: "/bergo.jpeg",
-      hoverImage: "/bergo.jpeg",
-      images: ["/bergo.jpeg", "/bergo.jpeg"],
-      description: isEN
-        ? "Instant hijab series will be available soon."
-        : "Series hijab instan akan segera hadir.",
-      status: "soon",
-    },
-    {
-      id: 14,
-      series: "Raqiq Kaos",
-      name: "Raqiq Kaos - Black",
-      color: "Black",
-      material: "Kaos",
-      size: "Coming Soon",
-      price: "Coming Soon",
-      badge: "Coming Soon",
-      image: "/kaos.jpeg",
-      hoverImage: "/kaos.jpeg",
-      images: ["/kaos.jpeg", "/kaos.jpeg"],
-      description: isEN
-        ? "Soft daily hijab series will be available soon."
-        : "Series hijab kaos lembut akan segera hadir.",
-      status: "soon",
-    },
-    {
-      id: 15,
-      series: "Raqiq Kaos",
-      name: "Raqiq Kaos - Milo",
-      color: "Milo",
-      material: "Kaos",
-      size: "Coming Soon",
-      price: "Coming Soon",
-      badge: "Coming Soon",
-      image: "/kaos.jpeg",
-      hoverImage: "/kaos.jpeg",
-      images: ["/kaos.jpeg", "/kaos.jpeg"],
-      description: isEN
-        ? "A practical daily series designed for easy wear."
-        : "Series harian yang praktis dan mudah digunakan.",
-      status: "soon",
-    },
-  ]
+  {
+    id: 1,
+    series: "Ruwa Viscose",
+    name: "Ruwa Viscose - Black",
+    color: "Black",
+    material: "Viscose",
+    size: "175 x 70 cm",
+    price: "Rp56.000",
+    image: "/vblack.png",
+    hoverImage: "/kain.jpeg",
+    images: ["/viscose.jpeg", "/kain.jpeg", "/viscose.jpeg"],
+    description: isEN
+      ? "Premium viscose pashmina with a soft texture, breathable feel, and elegant drape for everyday comfort."
+      : "Pashmina viscose premium dengan tekstur lembut, nyaman digunakan, dan jatuh elegan untuk aktivitas sehari-hari.",
+  },
+  {
+    id: 2,
+    series: "Ruwa Viscose",
+    name: "Ruwa Viscose - Rose Beige",
+    color: "Rose Beige",
+    material: "Viscose",
+    size: "175 x 70 cm",
+    price: "Rp56.000",
+    image: "/rosebg.png",
+    hoverImage: "/kain.jpeg",
+    images: ["/bg1.jpeg", "/kain.jpeg", "/viscose.jpeg"],
+    description: isEN
+      ? "A warm earthy tone that blends effortlessly with both casual and formal looks."
+      : "Warna cokelat hangat yang mudah dipadukan untuk tampilan santai maupun formal.",
+  },
+  {
+    id: 3,
+    series: "Ruwa Viscose",
+    name: "Ruwa Viscose - Cocoa",
+    color: "Cocoa",
+    material: "Viscose",
+    size: "175 cm",
+    price: "Rp59.000",
+    badge: "",
+    image: "/viscose.jpeg",
+    hoverImage: "/viscose.jpeg",
+    images: ["/viscose.jpeg", "/viscose.jpeg", "/viscose.jpeg"],
+    description: isEN
+      ? "A rich cocoa shade designed for a timeless and sophisticated appearance."
+      : "Nuansa cokelat cocoa yang memberikan kesan timeless dan elegan dalam setiap penampilan.",
+  },
+  {
+    id: 4,
+    series: "Mahra Voal",
+    name: "Mahra Voal - Pearl Grey",
+    color: "Pearl Grey",
+    material: "Voal Arabian",
+    size: "175 x 70 cm",
+    price: "Rp56.000",
+    image: "/model1voal.png",
+    hoverImage: "/bahanvoal.png",
+    images: ["/model1voal.png", "/dbvvoal.png", "/model voal.png"],
+    description: isEN
+      ? "A timeless pearl grey tone inspired by soft elegance, perfect for both everyday wear and special occasions."
+      : "Nuansa pearl grey yang timeless dengan sentuhan elegan, cocok digunakan untuk aktivitas sehari-hari maupun momen spesial."
+  },
+  {
+    id: 5,
+    series: "Mahra Voal",
+    name: "Mahra Voal - Bata",
+    color: "Bata",
+    material: "Voal Arabian",
+    size: "175 x 70 cm",
+    price: "Rp56.000",
+    badge: "",
+    image: "/qs.png",
+    hoverImage: "/bata32.png",
+    images: ["/bata1.png", "/bata2.png", "/bata.png"],
+    description: isEN
+      ? "A warm brick-inspired shade that adds character while remaining soft and elegant."
+      : "Warna bata yang hangat dengan karakter kuat namun tetap memberikan kesan lembut dan elegan.",
+  },
+  {
+    id: 6,
+    series: "Mahra Voal",
+    name: "Mahra Voal - Taupe",
+    color: "Taupe",
+    material: "Voal Arabian",
+    size: "175 cm",
+    price: "Rp79.000",
+    badge: "Limited",
+    image: "/voal.jpeg",
+    hoverImage: "/voal.jpeg",
+    images: ["/voal.jpeg", "/voal.jpeg", "/voal.jpeg"],
+    description: isEN
+      ? "A timeless taupe tone perfect for creating clean and versatile everyday looks."
+      : "Warna taupe yang timeless dan mudah dipadukan untuk tampilan yang bersih dan versatile.",
+  },
+  {
+    id: 7,
+    series: "Nazira Segi Empat",
+    name: "Nazira Segi Empat - Dusty Pink",
+    color: "Dusty Pink",
+    material: "Paris Japan",
+    size: "115 × 115 cm",
+    price: "Rp62.000",
+    image: "/dp.png",
+    hoverImage: "/dustypink1.png",
+    images: ["/dustypink.png", "/dustypink2.png"],
+    description: isEN
+      ? "Soft Paris Japan square scarf with a feminine dusty pink tone for everyday elegance."
+      : "Hijab segi empat Paris Japan dengan warna dusty pink yang lembut dan memberikan kesan feminin.",
+  },
+  {
+    id: 8,
+    series: "Nazira Segi Empat",
+    name: "Nazira Segi Empat - Blue Denim",
+    color: "Blue Denim",
+    material: "Paris Japan",
+    size: "115 × 115 cm",
+    price: "Rp62.000",
+    badge: "",
+    image: "/bluedenimr.png",
+    hoverImage: "/bluedenim2.png",
+    images: ["/bluedenim.png", "/bluedenim3.png"],
+    description: isEN
+      ? "A modern denim blue shade that brings a fresh and effortless look."
+      : "Warna biru denim yang modern untuk tampilan yang segar dan effortless.",
+  },
+  {
+    id: 9,
+    series: "Nazira Segi Empat",
+    name: "Nazira Segi Empat - Dusty Maroon",
+    color: "Dusty Maroon",
+    material: "Paris Japan",
+    size: "115 × 115 cm",
+    price: "Rp62.000",
+    image: "/as.png",
+    hoverImage: "/maron2.png",
+    images: ["/maron.png", "/maron3.png"],
+    description: isEN
+      ? "A deep dusty maroon shade that creates a graceful and confident appearance."
+      : "Warna dusty maroon yang anggun dan berkarakter untuk menunjang rasa percaya diri.",
+  },
+  {
+    id: 10,
+    series: "Nazira Segi Empat",
+    name: "Nazira Segi Empat - Vanila Cream",
+    color: "Vanila Cream",
+    material: "Paris Japan",
+    size: "115 × 115 cm",
+    price: "Rp62.000",
+    image: "/vcc.png",
+    hoverImage: "/Ceruty.jpeg",
+    images: ["/Ceruty.jpeg", "/Ceruty.jpeg", "/Ceruty.jpeg"],
+    description: isEN
+      ? "Flowy ceruty pashmina with a soft mocca tone, designed for elegant everyday wear."
+      : "Pashmina ceruty dengan warna mocca yang lembut dan jatuh cantik untuk tampilan elegan.",
+  },
+  {
+    id: 11,
+    series: "Nazira Segi Empat",
+    name: "Nazira Segi Empat - Black",
+    color: "Black",
+    material: "Paris Japan",
+    size: "115 × 115 cm",
+    price: "Rp62.000",
+    image: "/blak.png",
+    hoverImage: "/Ceruty.jpeg",
+    images: ["/Ceruty.jpeg", "/Ceruty.jpeg", "/Ceruty.jpeg"],
+    description: isEN
+      ? "A soft nude shade with a light and feminine impression for any occasion."
+      : "Warna nude yang lembut dengan kesan feminin dan mudah dipadukan dalam berbagai kesempatan.",
+  },
+  {
+    id: 12,
+    series: "Wareefa Ceruty",
+    name: "Wareefa Ceruty - Ash Grey",
+    color: "Ash Grey",
+    material: "Ceruty",
+    size: "175 cm",
+    price: "Rp89.000",
+    badge: "Limited",
+    image: "/Ceruty.jpeg",
+    hoverImage: "/Ceruty.jpeg",
+    images: ["/Ceruty.jpeg", "/Ceruty.jpeg", "/Ceruty.jpeg"],
+    description: isEN
+      ? "A sophisticated ash grey tone that complements modern modest fashion."
+      : "Warna ash grey yang elegan dan cocok untuk tampilan modest modern.",
+  },
+  {
+    id: 13,
+    series: "Dania Bergo",
+    name: "Dania Bergo - Daily Nude",
+    color: "Daily Nude",
+    material: "Bergo",
+    size: "Coming Soon",
+    price: "Coming Soon",
+    badge: "Coming Soon",
+    image: "/bergo.jpeg",
+    hoverImage: "/bergo.jpeg",
+    images: ["/bergo.jpeg", "/bergo.jpeg"],
+    description: isEN
+      ? "Our upcoming instant hijab collection, designed for comfort and practicality."
+      : "Koleksi hijab instan yang akan segera hadir dengan fokus pada kenyamanan dan kepraktisan.",
+    status: "soon",
+  },
+  {
+    id: 14,
+    series: "Raqiq Kaos",
+    name: "Raqiq Kaos - Black",
+    color: "Black",
+    material: "Kaos",
+    size: "Coming Soon",
+    price: "Coming Soon",
+    badge: "Coming Soon",
+    image: "/kaos.jpeg",
+    hoverImage: "/kaos.jpeg",
+    images: ["/kaos.jpeg", "/kaos.jpeg"],
+    description: isEN
+      ? "An upcoming soft jersey collection made for effortless daily wear."
+      : "Koleksi hijab kaos yang akan segera hadir dengan kenyamanan untuk aktivitas sehari-hari.",
+    status: "soon",
+  },
+  {
+    id: 15,
+    series: "Raqiq Kaos",
+    name: "Raqiq Kaos - Milo",
+    color: "Milo",
+    material: "Kaos",
+    size: "Coming Soon",
+    price: "Coming Soon",
+    badge: "Coming Soon",
+    image: "/kaos.jpeg",
+    hoverImage: "/kaos.jpeg",
+    images: ["/kaos.jpeg", "/kaos.jpeg"],
+    description: isEN
+      ? "A practical everyday jersey series designed with softness and simplicity in mind."
+      : "Series hijab kaos yang praktis, lembut, dan nyaman untuk digunakan setiap hari.",
+    status: "soon",
+  },
+]
 
   const seriesList = [
     "All",

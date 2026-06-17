@@ -10,9 +10,9 @@ function Home() {
     {
       name: "Ruwa Viscose",
       type: "Pashmina",
-      size: "175 cm",
-      price: "Rp 59.000",
-      img: "/viscose.jpeg",
+      size: "175 x 70 cm",
+      price: "Rp 56.000",
+      img: "/vblack.png",
       status: "ready",
     },
     {
@@ -27,8 +27,8 @@ function Home() {
       name: "Nazira Segi Empat",
       type: "Segi Empat",
       size: "115 × 115 cm",
-      price: "Rp 69.000",
-      img: "/segi.jpeg",
+      price: "Rp 62.000",
+      img: "/blak.png",
       status: "ready",
     },
     {
