@@ -5,344 +5,475 @@ import {
   ChevronLeft,
   ChevronRight,
   Eye,
-  Leaf,
-  Feather,
-  Heart,
+  SlidersHorizontal,
 } from "lucide-react"
+import { FaTiktok } from "react-icons/fa6"
+import { SiShopee } from "react-icons/si"
 import { useLanguage } from "../context/LanguageContext"
 
 function Collection() {
   const { language } = useLanguage()
+  const isEN = language === "EN"
 
   const [selectedProduct, setSelectedProduct] = useState(null)
-  const [activeCategory, setActiveCategory] = useState("All")
+  const [activeSeries, setActiveSeries] = useState("All")
   const [currentImage, setCurrentImage] = useState(0)
+
+  const shopeeLink = "https://shopee.co.id/"
+  const tiktokLink = "https://www.tiktok.com/"
 
   const products = [
     {
       id: 1,
-      name: "Pashmina Milk Tea",
-      category: "Pashmina Voal",
-      price: "Rp89.000",
-      images: ["/katalog11.png", "/detail1.png", "/detail2.png", "/detail3.png"],
-      description:
-        language === "EN"
-          ? "Premium voal pashmina with lightweight material, elegant texture, and comfortable feel for everyday styling."
-          : "Pashmina voal premium dengan material ringan, tekstur elegan, dan nyaman digunakan untuk aktivitas sehari-hari.",
-      material: language === "EN" ? "Premium Voal" : "Voal Premium",
-      size: "180 x 75 cm",
-      shopee: "https://shopee.co.id/",
-      tiktok: "https://www.tiktok.com/",
+      series: "Ruwa Viscose",
+      name: "Ruwa Viscose - Milk Tea",
+      color: "Milk Tea",
+      material: "Viscose",
+      size: "175 cm",
+      price: "Rp59.000",
+      badge: "Best Seller",
+      image: "/viscose.jpeg",
+      hoverImage: "/kain.jpeg",
+      images: ["/viscose.jpeg", "/kain.jpeg", "/viscose.jpeg"],
+      description: isEN
+        ? "Soft viscose pashmina with a natural fall for a neat everyday look."
+        : "Pashmina viscose lembut dengan karakter jatuh alami untuk tampilan harian yang rapi.",
     },
     {
       id: 2,
-      name: "Pashmina Sage Green",
-      category: "Pashmina Kaos",
-      price: "Rp89.000",
-      images: ["/katalog 2.png", "/detail4.png", "/detail5.png", "/detail6.png"],
-      description:
-        language === "EN"
-          ? "Soft stretch pashmina with breathable fabric and elegant natural drape."
-          : "Pashmina stretch lembut dengan bahan breathable dan jatuh kain yang elegan.",
-      material: language === "EN" ? "Premium Kaos" : "Kaos Premium",
-      size: "180 x 75 cm",
-      shopee: "https://shopee.co.id/",
-      tiktok: "https://www.tiktok.com/",
+      series: "Ruwa Viscose",
+      name: "Ruwa Viscose - Soft Brown",
+      color: "Soft Brown",
+      material: "Viscose",
+      size: "175 cm",
+      price: "Rp59.000",
+      badge: "New",
+      image: "/viscose.jpeg",
+      hoverImage: "/kain.jpeg",
+      images: ["/bg1.jpeg", "/kain.jpeg", "/viscose.jpeg"],
+      description: isEN
+        ? "A warm neutral shade that is easy to pair with daily outfits."
+        : "Warna netral hangat yang mudah dipadukan dengan outfit harian.",
     },
     {
       id: 3,
-      name: "Pashmina Mauve",
-      category: "Pashmina Viscose",
-      price: "Rp89.000",
-      images: ["/katalog3.png", "/detail7.png", "/detail8.png", "/detail9.png"],
-      description:
-        language === "EN"
-          ? "Elegant viscose scarf with feminine colors and luxurious flow."
-          : "Pashmina viscose elegan dengan warna feminin dan tampilan mewah.",
-      material: language === "EN" ? "Premium Viscose" : "Viscose Premium",
-      size: "180 x 75 cm",
-      shopee: "https://shopee.co.id/",
-      tiktok: "https://www.tiktok.com/",
+      series: "Ruwa Viscose",
+      name: "Ruwa Viscose - Cocoa",
+      color: "Cocoa",
+      material: "Viscose",
+      size: "175 cm",
+      price: "Rp59.000",
+      badge: "",
+      image: "/viscose.jpeg",
+      hoverImage: "/viscose.jpeg",
+      images: ["/viscose.jpeg", "/viscose.jpeg", "/viscose.jpeg"],
+      description: isEN
+        ? "A calm brown tone made for simple and graceful styling."
+        : "Warna cokelat lembut untuk tampilan sederhana dan anggun.",
     },
     {
       id: 4,
-      name: "Pashmina Deep Taupe",
-      category: "Pashmina Print Kaos",
+      series: "Mahra Voal",
+      name: "Mahra Voal - Sand Beige",
+      color: "Sand Beige",
+      material: "Voal",
+      size: "175 cm",
+      price: "Rp79.000",
+      badge: "New",
+      image: "/voal.jpeg",
+      hoverImage: "/voal.jpeg",
+      images: ["/voal.jpeg", "/voal.jpeg", "/voal.jpeg"],
+      description: isEN
+        ? "Lightweight voal with a clean finish and easy styling."
+        : "Voal ringan dengan tampilan bersih dan mudah dibentuk.",
+    },
+    {
+      id: 5,
+      series: "Mahra Voal",
+      name: "Mahra Voal - Ivory",
+      color: "Ivory",
+      material: "Voal",
+      size: "175 cm",
+      price: "Rp79.000",
+      badge: "",
+      image: "/voal.jpeg",
+      hoverImage: "/voal.jpeg",
+      images: ["/voal.jpeg", "/voal.jpeg", "/voal.jpeg"],
+      description: isEN
+        ? "A soft light shade for a clean and graceful look."
+        : "Warna terang yang lembut untuk tampilan bersih dan anggun.",
+    },
+    {
+      id: 6,
+      series: "Mahra Voal",
+      name: "Mahra Voal - Taupe",
+      color: "Taupe",
+      material: "Voal",
+      size: "175 cm",
+      price: "Rp79.000",
+      badge: "Limited",
+      image: "/voal.jpeg",
+      hoverImage: "/voal.jpeg",
+      images: ["/voal.jpeg", "/voal.jpeg", "/voal.jpeg"],
+      description: isEN
+        ? "A timeless neutral shade with a soft elegant impression."
+        : "Warna netral timeless dengan kesan lembut dan elegan.",
+    },
+    {
+      id: 7,
+      series: "Nazira Segi Empat",
+      name: "Nazira Segi Empat - Cream",
+      color: "Cream",
+      material: "Paris Japan",
+      size: "115 × 115 cm",
+      price: "Rp69.000",
+      badge: "Best Seller",
+      image: "/segi.jpeg",
+      hoverImage: "/segi.jpeg",
+      images: ["/segi.jpeg", "/segi.jpeg", "/segi.jpeg"],
+      description: isEN
+        ? "A square scarf with a light texture for a neat everyday style."
+        : "Hijab segi empat bertekstur ringan untuk tampilan harian yang rapi.",
+    },
+    {
+      id: 8,
+      series: "Nazira Segi Empat",
+      name: "Nazira Segi Empat - Dusty Pink",
+      color: "Dusty Pink",
+      material: "Paris Japan",
+      size: "115 × 115 cm",
+      price: "Rp69.000",
+      badge: "",
+      image: "/segi.jpeg",
+      hoverImage: "/segi.jpeg",
+      images: ["/segi.jpeg", "/segi.jpeg", "/segi.jpeg"],
+      description: isEN
+        ? "A soft feminine color with a simple and clean finish."
+        : "Warna feminin yang lembut dengan tampilan sederhana dan bersih.",
+    },
+    {
+      id: 9,
+      series: "Nazira Segi Empat",
+      name: "Nazira Segi Empat - Sage",
+      color: "Sage",
+      material: "Paris Japan",
+      size: "115 × 115 cm",
+      price: "Rp69.000",
+      badge: "New",
+      image: "/segi.jpeg",
+      hoverImage: "/segi.jpeg",
+      images: ["/segi.jpeg", "/segi.jpeg", "/segi.jpeg"],
+      description: isEN
+        ? "A calm green shade made for soft everyday looks."
+        : "Warna hijau lembut untuk tampilan harian yang tenang.",
+    },
+    {
+      id: 10,
+      series: "Wareefa Ceruty",
+      name: "Wareefa Ceruty - Mocca",
+      color: "Mocca",
+      material: "Ceruty",
+      size: "175 cm",
       price: "Rp89.000",
-      images: ["/katalog44.png", "/detail10.png", "/detail11.png", "/detail12.png"],
-      description:
-        language === "EN"
-          ? "Printed pashmina with soft premium fabric and timeless neutral aesthetic."
-          : "Pashmina print dengan bahan premium lembut dan tampilan netral yang elegan.",
-      material: language === "EN" ? "Premium Print Kaos" : "Print Kaos Premium",
-      size: "180 x 75 cm",
-      shopee: "https://shopee.co.id/",
-      tiktok: "https://www.tiktok.com/",
+      badge: "Best Seller",
+      image: "/Ceruty.jpeg",
+      hoverImage: "/Ceruty.jpeg",
+      images: ["/Ceruty.jpeg", "/Ceruty.jpeg", "/Ceruty.jpeg"],
+      description: isEN
+        ? "A flowy ceruty pashmina with a soft feminine look."
+        : "Pashmina ceruty yang flowy dengan kesan feminin dan lembut.",
+    },
+    {
+      id: 11,
+      series: "Wareefa Ceruty",
+      name: "Wareefa Ceruty - Nude",
+      color: "Nude",
+      material: "Ceruty",
+      size: "175 cm",
+      price: "Rp89.000",
+      badge: "",
+      image: "/Ceruty.jpeg",
+      hoverImage: "/Ceruty.jpeg",
+      images: ["/Ceruty.jpeg", "/Ceruty.jpeg", "/Ceruty.jpeg"],
+      description: isEN
+        ? "A soft nude shade for an effortless graceful style."
+        : "Warna nude lembut untuk gaya anggun yang effortless.",
+    },
+    {
+      id: 12,
+      series: "Wareefa Ceruty",
+      name: "Wareefa Ceruty - Ash Grey",
+      color: "Ash Grey",
+      material: "Ceruty",
+      size: "175 cm",
+      price: "Rp89.000",
+      badge: "Limited",
+      image: "/Ceruty.jpeg",
+      hoverImage: "/Ceruty.jpeg",
+      images: ["/Ceruty.jpeg", "/Ceruty.jpeg", "/Ceruty.jpeg"],
+      description: isEN
+        ? "A soft grey tone that brings a modern modest look."
+        : "Warna abu lembut untuk tampilan modest yang modern.",
+    },
+    {
+      id: 13,
+      series: "Dania Bergo",
+      name: "Dania Bergo - Daily Nude",
+      color: "Daily Nude",
+      material: "Bergo",
+      size: "Coming Soon",
+      price: "Coming Soon",
+      badge: "Coming Soon",
+      image: "/bergo.jpeg",
+      hoverImage: "/bergo.jpeg",
+      images: ["/bergo.jpeg", "/bergo.jpeg"],
+      description: isEN
+        ? "Instant hijab series will be available soon."
+        : "Series hijab instan akan segera hadir.",
+      status: "soon",
+    },
+    {
+      id: 14,
+      series: "Raqiq Kaos",
+      name: "Raqiq Kaos - Black",
+      color: "Black",
+      material: "Kaos",
+      size: "Coming Soon",
+      price: "Coming Soon",
+      badge: "Coming Soon",
+      image: "/kaos.jpeg",
+      hoverImage: "/kaos.jpeg",
+      images: ["/kaos.jpeg", "/kaos.jpeg"],
+      description: isEN
+        ? "Soft daily hijab series will be available soon."
+        : "Series hijab kaos lembut akan segera hadir.",
+      status: "soon",
+    },
+    {
+      id: 15,
+      series: "Raqiq Kaos",
+      name: "Raqiq Kaos - Milo",
+      color: "Milo",
+      material: "Kaos",
+      size: "Coming Soon",
+      price: "Coming Soon",
+      badge: "Coming Soon",
+      image: "/kaos.jpeg",
+      hoverImage: "/kaos.jpeg",
+      images: ["/kaos.jpeg", "/kaos.jpeg"],
+      description: isEN
+        ? "A practical daily series designed for easy wear."
+        : "Series harian yang praktis dan mudah digunakan.",
+      status: "soon",
     },
   ]
 
-  const categories = [
+  const seriesList = [
     "All",
-    "Pashmina Voal",
-    "Pashmina Kaos",
-    "Pashmina Viscose",
-    "Pashmina Print Kaos",
+    "Ruwa Viscose",
+    "Mahra Voal",
+    "Nazira Segi Empat",
+    "Wareefa Ceruty",
+    "Dania Bergo",
+    "Raqiq Kaos",
   ]
 
   const filteredProducts =
-    activeCategory === "All"
+    activeSeries === "All"
       ? products
-      : products.filter((product) => product.category === activeCategory)
+      : products.filter((product) => product.series === activeSeries)
 
   const nextImage = () => {
+    if (!selectedProduct) return
     setCurrentImage((prev) =>
       prev === selectedProduct.images.length - 1 ? 0 : prev + 1
     )
   }
 
   const prevImage = () => {
+    if (!selectedProduct) return
     setCurrentImage((prev) =>
       prev === 0 ? selectedProduct.images.length - 1 : prev - 1
     )
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#f8f3ef]">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#fffaf7] via-[#f7eee9] to-[#eadbd3]" />
-      <div className="absolute left-[-180px] top-20 h-[520px] w-[520px] rounded-full bg-[#dcc0b5] opacity-35 blur-[150px]" />
-      <div className="absolute right-[-180px] top-[220px] h-[560px] w-[560px] rounded-full bg-[#caa99d] opacity-25 blur-[160px]" />
-
-      {/* HERO */}
-      <section className="relative z-10 px-6 pt-28 md:px-20 md:pt-32">
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
+    <main className="min-h-screen bg-[#f7f1ec] text-[#2f2521]">
+      <section className="px-6 pb-12 pt-28 text-center md:px-14 lg:px-20">
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="
-            mx-auto grid max-w-7xl items-center overflow-hidden
-            rounded-[44px] border border-white/70
-            bg-[#f7eee9]
-            shadow-[0_30px_90px_rgba(80,45,35,0.08)]
-            md:grid-cols-[0.9fr_1.1fr]
-          "
+          className="text-xs uppercase tracking-[4px] text-[#8b6f62]"
         >
-          {/* LEFT CONTENT */}
-          <div className="relative z-20 p-8 text-center md:p-12 md:text-left">
-            <p className="text-[11px] font-medium uppercase tracking-[7px] text-[#b0897b]">
-              NOURAFA Collection
-            </p>
+          NOURAFA COLLECTION
+        </motion.p>
 
-            <h1 className="mt-7 font-serif text-[46px] leading-[0.95] tracking-[-2px] text-[#9f6f62] md:text-[74px]">
-              Beauty
-              <br />
-              in Simplicity
-            </h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.08 }}
+          className="mx-auto mt-5 max-w-3xl font-serif text-[46px] leading-[0.95] tracking-[-2px] md:text-[72px]"
+        >
+          {isEN ? "Find your everyday scarf." : "Temukan hijab untuk harimu."}
+        </motion.h1>
 
-            <div className="mx-auto mt-5 h-[1px] w-full max-w-[280px] bg-[#b0897b]/35 md:mx-0" />
-
-            <p className="mx-auto mt-7 max-w-xl text-[16px] leading-8 text-[#7c6257] md:mx-0 md:text-lg">
-              {language === "EN"
-                ? "Soft elegance for modest daily wear. Timeless beauty for every moment."
-                : "Elegansi lembut untuk tampilan modest sehari-hari. Keindahan timeless untuk setiap momen."}
-            </p>
-
-            <div className="mt-14 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-center md:justify-start">
-              <span className="inline-flex items-center justify-center gap-2 rounded-full bg-white/85 px-6 py-3 text-sm text-[#9f6f62] shadow-sm">
-                <Leaf size={16} />
-                Premium Hijab
-              </span>
-
-              <span className="inline-flex items-center justify-center gap-2 rounded-full bg-white/85 px-6 py-3 text-sm text-[#9f6f62] shadow-sm">
-                <Feather size={16} />
-                Soft & Light
-              </span>
-
-              <span className="inline-flex items-center justify-center gap-2 rounded-full bg-white/85 px-6 py-3 text-sm text-[#9f6f62] shadow-sm">
-                <Heart size={16} />
-                Daily Elegant
-              </span>
-            </div>
-          </div>
-
-          {/* RIGHT IMAGE */}
-          <div className="relative flex h-[430px] items-center justify-center p-6 md:h-[530px] md:p-10">
-            <div
-              className="
-                relative h-full w-full overflow-hidden
-                rounded-[36px]
-                border border-white/80
-                bg-white/40
-                p-3
-                shadow-[0_25px_70px_rgba(80,45,35,0.12)]
-              "
-            >
-              <img
-                src="/ms.jpg"
-                alt="NOURAFA Collection Campaign"
-                className="
-                  h-full
-                  w-full
-                  rounded-[28px]
-                  object-cover
-                  object-top
-                "
-              />
-
-              <div
-                className="
-                  absolute left-7 top-7
-                  rounded-full bg-white/85
-                  px-5 py-3
-                  backdrop-blur-xl
-                  shadow-[0_12px_30px_rgba(80,45,35,0.08)]
-                "
-              >
-            
-             
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        <motion.p
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.16 }}
+          className="mx-auto mt-6 max-w-xl text-sm leading-7 text-[#6f5a50] md:text-[15px]"
+        >
+          {isEN
+            ? "Explore every Nourafa series by color, material, and comfort."
+            : "Jelajahi setiap series Nourafa berdasarkan warna, bahan, dan kenyamanan."}
+        </motion.p>
       </section>
 
-      {/* FILTER */}
-      <section className="relative z-10 mt-8 px-6 md:px-20">
-        <div className="mx-auto flex max-w-7xl gap-3 overflow-x-auto rounded-[30px] border border-white/70 bg-white/45 p-3 shadow-[0_18px_45px_rgba(80,45,35,0.05)] backdrop-blur-xl scrollbar-hide">
-          {categories.map((category) => (
+      <section className="sticky top-0 z-30 border-y border-[#ded0c7] bg-[#f7f1ec]/90 px-4 py-4 backdrop-blur-xl md:px-14 lg:px-20">
+        <div className="mx-auto flex max-w-7xl items-center gap-3 overflow-x-auto">
+          <div className="flex shrink-0 items-center gap-2 pr-2 text-xs uppercase tracking-[2px] text-[#8b6f62]">
+            <SlidersHorizontal size={15} />
+            Series
+          </div>
+
+          {seriesList.map((series) => (
             <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`whitespace-nowrap rounded-full px-6 py-3 text-sm transition duration-300 ${
-                activeCategory === category
-                  ? "bg-[#9f6f62] text-white shadow-[0_12px_25px_rgba(159,111,98,0.25)]"
-                  : "bg-white/80 text-[#9f6f62] hover:bg-white"
+              key={series}
+              onClick={() => setActiveSeries(series)}
+              className={`whitespace-nowrap rounded-full px-5 py-2.5 text-xs uppercase tracking-[1.5px] transition ${
+                activeSeries === series
+                  ? "bg-[#2f2521] text-white"
+                  : "bg-white text-[#6f5a50] hover:bg-[#eaded6]"
               }`}
             >
-              {category}
+              {series}
             </button>
           ))}
         </div>
       </section>
 
-      {/* PRODUCT */}
-      <section className="relative z-10 mt-10 px-6 pb-24 md:px-20">
-        <div className="mx-auto grid max-w-7xl gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <section className="px-6 py-10 md:px-14 lg:px-20">
+        <div className="mx-auto mb-8 flex max-w-7xl items-end justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[3px] text-[#8b6f62]">
+              {activeSeries === "All" ? "All Series" : activeSeries}
+            </p>
+            <h2 className="mt-2 font-serif text-3xl md:text-4xl">
+              {filteredProducts.length} {isEN ? "Products" : "Produk"}
+            </h2>
+          </div>
+        </div>
+
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-11 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {filteredProducts.map((product, index) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="
-                group overflow-hidden rounded-[30px] border border-white/80
-                bg-white/70 p-3
-                shadow-[0_18px_45px_rgba(80,45,35,0.07)]
-                backdrop-blur-xl transition duration-500
-                hover:-translate-y-2
-                hover:shadow-[0_28px_70px_rgba(80,45,35,0.13)]
-              "
+              transition={{ duration: 0.45, delay: index * 0.04 }}
+              className="group cursor-pointer"
+              onClick={() => {
+                setSelectedProduct(product)
+                setCurrentImage(0)
+              }}
             >
-              <div className="relative overflow-hidden rounded-[24px] bg-[#f3ebe6]">
+              <div className="relative aspect-[3/4] overflow-hidden bg-[#e8ddd5]">
                 <img
-                  src={product.images[0]}
+                  src={product.image}
                   alt={product.name}
-                  className="
-                    h-[330px] w-full object-cover object-top
-                    transition duration-700
-                    group-hover:scale-[1.05]
-                    md:h-[400px]
-                  "
+                  className={`absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:opacity-0 ${
+                    product.status === "soon" ? "grayscale opacity-60" : ""
+                  }`}
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-70" />
+                <img
+                  src={product.hoverImage}
+                  alt={product.name}
+                  className={`h-full w-full object-cover opacity-0 transition duration-700 group-hover:scale-105 group-hover:opacity-100 ${
+                    product.status === "soon" ? "grayscale" : ""
+                  }`}
+                />
 
-                <button
-                  onClick={() => {
-                    setSelectedProduct(product)
-                    setCurrentImage(0)
-                  }}
-                  className="
-                    absolute bottom-4 right-4 flex items-center gap-2
-                    rounded-full bg-white/90 px-5 py-3
-                    text-sm text-[#9f6f62]
-                    shadow-lg backdrop-blur-xl
-                    transition hover:bg-[#9f6f62] hover:text-white
-                  "
-                >
-                  <Eye size={16} />
-                  {language === "EN" ? "View" : "Lihat"}
+                {product.badge && (
+                  <div className="absolute left-3 top-3 bg-white px-3 py-2 text-[9px] font-medium uppercase tracking-[1.7px] text-[#2f2521]">
+                    {product.badge}
+                  </div>
+                )}
+
+                <button className="absolute bottom-3 left-1/2 flex -translate-x-1/2 translate-y-5 items-center gap-2 bg-white px-5 py-3 text-[10px] uppercase tracking-[2px] text-[#2f2521] opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <Eye size={14} />
+                  {isEN ? "Quick View" : "Lihat Detail"}
                 </button>
               </div>
 
-              <div className="px-2 pb-3 pt-5">
-                <p className="text-[11px] uppercase tracking-[4px] text-[#b0897b]">
-                  {product.category}
+              <div className="mt-4 text-center">
+                <p className="text-[10px] uppercase tracking-[2px] text-[#8b6f62]">
+                  {product.series}
                 </p>
 
-                <h2 className="mt-3 font-serif text-[25px] leading-tight text-[#9f6f62]">
-                  {product.name}
-                </h2>
+                <h3 className="mt-2 min-h-[38px] text-[13px] uppercase leading-5 tracking-[1.4px]">
+                  {product.color}
+                </h3>
 
-                <div className="mt-5 flex items-center justify-between">
-                  <p className="text-[17px] font-semibold text-[#7c6257]">
-                    {product.price}
-                  </p>
+                <p className="mt-1 text-xs text-[#9a7d70]">
+                  {product.material} · {product.size}
+                </p>
 
-                  <p className="rounded-full bg-[#f3e6df] px-4 py-2 text-xs text-[#9f6f62]">
-                    {product.size}
-                  </p>
-                </div>
+                <p className="mt-2 text-sm text-[#6f5a50]">{product.price}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* POPUP */}
       <AnimatePresence>
         {selectedProduct && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 px-4 py-4 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 py-4 backdrop-blur-sm"
           >
             <motion.div
-              initial={{ opacity: 0, y: 30, scale: 0.96 }}
+              initial={{ opacity: 0, y: 28, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 30, scale: 0.96 }}
-              className="relative max-h-[92vh] w-full max-w-[900px] overflow-y-auto rounded-[34px] bg-[#fffaf7] shadow-2xl"
+              exit={{ opacity: 0, y: 28, scale: 0.96 }}
+              className="relative max-h-[92vh] w-full max-w-5xl overflow-y-auto bg-[#fffaf7] shadow-2xl"
             >
               <button
                 onClick={() => setSelectedProduct(null)}
-                className="absolute right-4 top-4 z-30 rounded-full bg-white/90 p-3 text-[#8f675b] shadow-md"
+                className="absolute right-4 top-4 z-30 bg-white p-3 text-[#2f2521] shadow-md"
               >
                 <X size={18} />
               </button>
 
               <div className="grid md:grid-cols-2">
-                <div className="relative bg-[#f1e7e1] p-4">
-                  <div className="overflow-hidden rounded-[26px]">
+                <div className="relative bg-[#efe5de] p-4">
+                  <div className="overflow-hidden bg-[#e8ddd5]">
                     <img
                       src={selectedProduct.images[currentImage]}
                       alt={selectedProduct.name}
-                      className="h-[350px] w-full object-cover object-top md:h-[500px]"
+                      className="h-[380px] w-full object-cover md:h-[620px]"
                     />
                   </div>
 
-                  <button
-                    onClick={prevImage}
-                    className="absolute left-7 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 text-[#8f675b] shadow-md"
-                  >
-                    <ChevronLeft size={18} />
-                  </button>
+                  {selectedProduct.images.length > 1 && (
+                    <>
+                      <button
+                        onClick={prevImage}
+                        className="absolute left-7 top-1/2 -translate-y-1/2 bg-white p-3 text-[#2f2521] shadow-md"
+                      >
+                        <ChevronLeft size={18} />
+                      </button>
 
-                  <button
-                    onClick={nextImage}
-                    className="absolute right-7 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 text-[#8f675b] shadow-md"
-                  >
-                    <ChevronRight size={18} />
-                  </button>
+                      <button
+                        onClick={nextImage}
+                        className="absolute right-7 top-1/2 -translate-y-1/2 bg-white p-3 text-[#2f2521] shadow-md"
+                      >
+                        <ChevronRight size={18} />
+                      </button>
+                    </>
+                  )}
 
                   <div className="mt-4 flex flex-wrap justify-center gap-2">
                     {selectedProduct.images.map((img, index) => (
@@ -351,9 +482,9 @@ function Collection() {
                         src={img}
                         alt=""
                         onClick={() => setCurrentImage(index)}
-                        className={`h-14 w-14 cursor-pointer rounded-2xl object-cover object-top transition ${
+                        className={`h-14 w-14 cursor-pointer object-cover transition ${
                           currentImage === index
-                            ? "scale-105 ring-2 ring-[#9f6f62]"
+                            ? "ring-2 ring-[#2f2521]"
                             : "opacity-60 hover:opacity-100"
                         }`}
                       />
@@ -361,69 +492,75 @@ function Collection() {
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center p-7 md:p-9">
-                  <p className="text-xs uppercase tracking-[4px] text-[#b0897b]">
-                    {selectedProduct.category}
+                <div className="flex flex-col justify-center p-7 md:p-10">
+                  <p className="text-xs uppercase tracking-[4px] text-[#8b6f62]">
+                    {selectedProduct.series}
                   </p>
 
-                  <h2 className="mt-4 font-serif text-4xl leading-tight text-[#9f6f62]">
-                    {selectedProduct.name}
+                  <h2 className="mt-4 font-serif text-[36px] leading-tight md:text-[48px]">
+                    {selectedProduct.color}
                   </h2>
 
-                  <p className="mt-4 text-2xl font-semibold text-[#7c6257]">
+                  <p className="mt-3 text-xl text-[#6f5a50]">
                     {selectedProduct.price}
                   </p>
 
-                  <p className="mt-5 text-[15px] leading-8 text-[#7c6257]">
+                  <p className="mt-6 text-[15px] leading-8 text-[#6f5a50]">
                     {selectedProduct.description}
                   </p>
 
-                  <div className="mt-7 space-y-4 rounded-[24px] border border-[#eadbd3] bg-white/60 p-5">
-                    <div className="flex items-center justify-between border-b border-[#eadbd3] pb-3">
-                      <span className="text-[#b0897b]">
-                        {language === "EN" ? "Material" : "Bahan"}
+                  <div className="mt-8 border-y border-[#e3d4ca] py-5">
+                    <div className="flex justify-between gap-6 py-3 text-sm">
+                      <span className="text-[#8b6f62]">
+                        {isEN ? "Product" : "Produk"}
                       </span>
-
-                      <span className="font-medium text-[#7c6257]">
-                        {selectedProduct.material}
-                      </span>
+                      <span>{selectedProduct.name}</span>
                     </div>
 
-                    <div className="flex items-center justify-between">
-                      <span className="text-[#b0897b]">Size</span>
+                    <div className="flex justify-between gap-6 py-3 text-sm">
+                      <span className="text-[#8b6f62]">
+                        {isEN ? "Material" : "Bahan"}
+                      </span>
+                      <span>{selectedProduct.material}</span>
+                    </div>
 
-                      <span className="font-medium text-[#7c6257]">
-                        {selectedProduct.size}
+                    <div className="flex justify-between gap-6 py-3 text-sm">
+                      <span className="text-[#8b6f62]">
+                        {isEN ? "Size" : "Ukuran"}
+                      </span>
+                      <span>{selectedProduct.size}</span>
+                    </div>
+
+                    <div className="flex justify-between gap-6 py-3 text-sm">
+                      <span className="text-[#8b6f62]">Status</span>
+                      <span>
+                        {selectedProduct.status === "soon"
+                          ? "Coming Soon"
+                          : isEN
+                          ? "Available"
+                          : "Tersedia"}
                       </span>
                     </div>
                   </div>
 
-                  <div className="mt-7 grid grid-cols-2 gap-3">
+                  <div className="mt-8 grid grid-cols-2 gap-3">
                     <a
-                      href={selectedProduct.shopee}
+                      href={shopeeLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 rounded-full bg-[#ee4d2d] py-3 font-medium text-white shadow-lg transition hover:scale-[1.02]"
+                      className="flex items-center justify-center gap-2 bg-[#ee4d2d] px-5 py-4 text-xs font-medium uppercase tracking-[1.5px] text-white transition hover:opacity-90"
                     >
-                      <img
-                        src="/shopee.png"
-                        alt="Shopee"
-                        className="h-5 w-5 object-contain"
-                      />
+                      <SiShopee size={20} />
                       Shopee
                     </a>
 
                     <a
-                      href={selectedProduct.tiktok}
+                      href={tiktokLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 rounded-full bg-black py-3 font-medium text-white shadow-lg transition hover:scale-[1.02]"
+                      className="flex items-center justify-center gap-2 bg-black px-5 py-4 text-xs font-medium uppercase tracking-[1.5px] text-white transition hover:opacity-90"
                     >
-                      <img
-                        src="/3.png"
-                        alt="TikTok"
-                        className="h-5 w-5 object-contain"
-                      />
+                      <FaTiktok size={18} />
                       TikTok
                     </a>
                   </div>
@@ -433,7 +570,7 @@ function Collection() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </main>
   )
 }
 
